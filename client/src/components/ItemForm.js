@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Button } from 'semantic-ui-react'
-import { addItem } from 
+import { addItem } from '../reducers/items'
 
 class ItemForm extends React.Component {
   initialState = { name: '', description: '', price: '' , quantity: ''}
@@ -22,8 +22,8 @@ class ItemForm extends React.Component {
     e.preventDefault()
     const { dispatch } = this.props
     const item = { ...this.state }
-    dispatch({ addItem(item))
-      this.setState({ ...this.initialState })
+    dispatch(addItem(item))
+    this.setState({ item, ...this.initialState })
   }
 
   render() {
@@ -57,10 +57,9 @@ class ItemForm extends React.Component {
       />
     
     <Button 
-    basic
-    fluid
-    onClick={() => {this.setState}}
-    content="Add Item"
+      basic
+      fluid
+      content="Add Item"
     />
     </Form>
 
