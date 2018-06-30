@@ -10,6 +10,7 @@ import About from './About'
 import ProtectedRoute from './ProtectedRoute'
 import AuthRoute from './AuthRoute'
 import FetchUser from './FetchUser'
+import Cart from './Cart'
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <AuthRoute exact path='/login' component={Login} />
             <AuthRoute exact path='/register' component={Register} />
+            <Route exact path='/cart' component={Cart} />
             <Route exact path='/about' component={About} />
             <Route component={NoMatch} />
           </Switch>
