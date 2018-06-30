@@ -56,12 +56,13 @@ class ItemForm extends React.Component {
         required
       />
     
-    </Form>
     <Button 
     basic
     fluid
-    onClick={() => {this.props}}
-
+    onClick={() => {this.setState}}
+    content="Add Item"
+    />
+    </Form>
 
     )
   }
