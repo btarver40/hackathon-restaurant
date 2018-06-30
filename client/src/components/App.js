@@ -29,6 +29,7 @@ class App extends Component {
             <AuthRoute exact path='/register' component={Register} />
             <Route exact path='/cart' component={Cart} />
             <Route exact path='/about' component={About} />
+            <ProtectedRoute exact path='/updatemenu'component={ItemForm}/>
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
