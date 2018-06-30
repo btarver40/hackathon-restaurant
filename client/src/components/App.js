@@ -11,6 +11,7 @@ import ProtectedRoute from './ProtectedRoute'
 import AuthRoute from './AuthRoute'
 import FetchUser from './FetchUser'
 import Cart from './Cart'
+import Menu from './Menu'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         <FetchUser>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/items' component={Menu} />
             <AuthRoute exact path='/login' component={Login} />
             <AuthRoute exact path='/register' component={Register} />
             <Route exact path='/cart' component={Cart} />
