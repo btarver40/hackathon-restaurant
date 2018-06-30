@@ -14,7 +14,8 @@ class ItemForm extends React.Component {
   }
 
   handleChange = (e) => {
-   this.setState({ name: e.target.value })
+    const { name, value } = e.target
+    this.setState({ [name]: value })
   }
 
   handleSubmit = (e) => {
@@ -22,11 +23,8 @@ class ItemForm extends React.Component {
     const { dispatch } = this.props
     const item = { ...this.state }
     dispatch(addItem(item))
-<<<<<<< HEAD
+
     this.setState({ item, ...this.initialState })
-=======
-      this.setState({ ...this.initialState })
->>>>>>> item form
   }
 
   render() {
@@ -69,5 +67,6 @@ class ItemForm extends React.Component {
     )
   }
 }
+
 
 export default connect()(ItemForm)
