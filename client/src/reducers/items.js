@@ -1,10 +1,14 @@
 // add an item update edit delete 
 import axios from 'axios'
+import { setHeaders } from './headers'
 
 export const addItem = (item) => {
   return (dispatch) => {
     axios.post('/api/items', { item } )
-     .then( res => dispatch({ type: 'ADD_ITEM', app: res.data }) )
+      .then( res => {
+        dispatch(setHeaders(res.headers));
+        dispatch({ type: 'ADD_ITEM', app: res.data }) 
+      })
   }
 }
 
