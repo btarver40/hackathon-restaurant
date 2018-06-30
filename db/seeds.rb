@@ -13,8 +13,9 @@ counter = 1
   email = "test#{counter}@test.com"
   password = "password"
   password_confirmation = "password"
-  User.create(name: name, email: email, password: password, password_confirmation: password_confirmation)
-  puts "Created user: #{name}, email: #{email}"
+  role = ['admin', 'guest'].sample
+  User.create(name: name, email: email, password: password, password_confirmation: password_confirmation, role: role)
+  puts "Created user: #{name}, email: #{email}, role: #{role}"
   counter += 1
 end
 
