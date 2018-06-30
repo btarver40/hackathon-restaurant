@@ -33,15 +33,6 @@ ActiveRecord::Schema.define(version: 20180630161337) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "menus", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.float "price"
-    t.integer "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
