@@ -22,6 +22,9 @@ class NavBar extends Component {
           <Link to='/cart'>
             <Menu.Item name='Cart' />
           </Link>
+          <Link to='/updatemenu'>
+            <Menu.Item name='Admin Menu' />
+          </Link>
           <Menu.Item
             name='Logout'
             onClick={() => dispatch(handleLogout(history))}
@@ -41,10 +44,10 @@ class NavBar extends Component {
         <Link to='/cart'>
           <Menu.Item name='Cart' />
         </Link>
-        {/* <Menu.Item
+        <Menu.Item
           name='Logout'
-          onClick={() => this.props.dispatch((history))}
-        /> */}
+          onClick={() => dispatch(handleLogout(history))}
+        />
       </Menu.Menu>
     )
   }
