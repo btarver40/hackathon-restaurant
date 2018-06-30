@@ -1,5 +1,6 @@
-class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :update, :destroy]
+class Api::CartsController < ApplicationController
+  def index
+  end
 
     def index
         cars = Cart.all
