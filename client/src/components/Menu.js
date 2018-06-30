@@ -1,9 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { Button, Container, Segment } from 'semantic-ui-react'
+import { Button, Container, Loader, Segment } from 'semantic-ui-react'
 import { addToCart } from '../actions/cartActions'
-
 
 class Menu extends React.Component {
   state = { items: [] }
@@ -31,9 +30,9 @@ class Menu extends React.Component {
     )
   } else {
     return(
-      <div>
+      <Loader>
         Loading...
-      </div>
+      </Loader>
     )}}
 }
 

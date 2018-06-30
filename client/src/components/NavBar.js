@@ -6,17 +6,27 @@ import { handleLogout } from '../reducers/user';
 
 class NavBar extends Component {
   rightNavs = () => {
-    const { user, dispatch, history } = this.props;
+    const { user, dispatch, history } = this.props
 
     if (user.id) {
       return (
         <Menu.Menu position='right'>
+          <Menu.Item>Welcome, {user.name}</Menu.Item>
+          <Link to='/about'>
+            <Menu.Item name='About Us' />
+          </Link>
+          <Link to='/items'>
+            <Menu.Item name='Menu' />
+          </Link>
+          <Link to='/cart'>
+            <Menu.Item name='Cart' />
+          </Link>
           <Menu.Item
             name='Logout'
             onClick={() => dispatch(handleLogout(history))}
           />
         </Menu.Menu>
-      );
+      )
     }
     return (
       <Menu.Menu position='right'>

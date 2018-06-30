@@ -22,7 +22,7 @@ class Cart extends Component {
           {cartList}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -38,4 +38,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)
