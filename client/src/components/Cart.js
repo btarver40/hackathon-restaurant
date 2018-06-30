@@ -14,7 +14,7 @@ class Cart extends Component {
         </button>
       </div>;
     });
-
+    
     return (
       <div>
         <h1>Cart</h1>
