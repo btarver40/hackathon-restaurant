@@ -6,7 +6,7 @@ const About = () => (
  <div> 
     <Grid>
       <Grid.Column mobile={16} tablet={8} computer={16}>
-        <MainHeader/>
+        <MainHeader></MainHeader>
       <AboutTitle>ABOUT THE PIE HOLE</AboutTitle>
       </Grid.Column>
       <Container>
