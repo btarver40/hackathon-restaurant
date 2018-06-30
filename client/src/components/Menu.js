@@ -1,5 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { Button, Container, Segment } from 'semantic-ui-react'
+
 
 class Menu extends React.Component {
   state = { items: [] }
@@ -13,16 +16,17 @@ class Menu extends React.Component {
     const { items } = this.state
     if (items.length) {
     return(
-      <div>
+      <Container textAlign='center'>
         { items.map( item => (
-          <div key={item.id}>
-            {item.name}<br />
+          <Segment raised red key={item.id}>
+            <b>{item.name}</b><br />
             {item.description}<br />
             {item.price}<br />
             {item.quantity}<br />
-          </div>
+            <Button onClick={() => this.props.addToCart(item)}>Add to Cart</Button>
+          </Segment>
         ))}
-      </div>
+      </Container>
     )
   } else {
     return(
@@ -32,4 +36,8 @@ class Menu extends React.Component {
     )}}
 }
 
-export default Menu
+function mapStateToProps(state) {
+  return { items: state.items }
+}
+
+export default connect(mapStateToProps)(Menu)

@@ -9,4 +9,4 @@ export default function cart(state = initialState.cart, action) {
         default:
             return state;
     }
-};
+}
