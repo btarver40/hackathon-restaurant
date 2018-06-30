@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-  belongs_to :cart
+  validates :name, :description, :price, presence: true
 end
