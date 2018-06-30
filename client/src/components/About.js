@@ -1,4 +1,6 @@
 import React from 'react'
+import { Container, Divider, Grid } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 const About = () => (
  <div> 

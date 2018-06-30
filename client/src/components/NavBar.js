@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { handleLogout } from '../reducers/user';
-import { Menu } from 'semantic-ui-react'
+
 
 class NavBar extends Component {
   rightNavs = () => {
@@ -24,29 +23,29 @@ class NavBar extends Component {
           </Link>
           <Menu.Item
             name='Logout'
-            onClick={() => dispatch(handleLogout(history))}
+            onClick={() => this.props.dispatch((history))}
           />
         </Menu.Menu>
       )
     }
     return (
-      <Menu>
       <Menu.Menu position='right'>
-        <Link to='/register'>
-          <Menu.Item name='Register' />
-        </Link>
-        <Link to='/login'>
-          <Menu.Item name='Login' />
-        </Link>
+        <Menu.Item>Welcome, {user.name}</Menu.Item>
         <Link to='/about'>
           <Menu.Item name='About Us' />
         </Link>
-        <Link to='/menu'>
+        <Link to='/items'>
           <Menu.Item name='Menu' />
         </Link>
+        <Link to='/cart'>
+          <Menu.Item name='Cart' />
+        </Link>
+        <Menu.Item
+          name='Logout'
+          onClick={() => dispatch((history))}
+        />
       </Menu.Menu>
-      </Menu>
-    );
+    )
   }
 
   render() {
