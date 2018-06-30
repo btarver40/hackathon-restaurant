@@ -71,6 +71,7 @@ flex-direction: row;
 const Headerr = styled.h1`
 text-align: center;
 padding-top: 20px;
+font-size: 55px;
 `
 
 const Paragraph = styled.h1`
@@ -78,7 +79,7 @@ text-align: center;
 font-family: "Didot 24 A","Didot 24 B"", "Book Antiqua", Palatino, serif;
 `
 
-const MainParagraph = styled.p`
+const MainParagraph = styled.h3`
 text-align: center;
 font-family: "Didot 24 A","Didot 24 B"", Palatino, serif;
 padding-top: 80px;
