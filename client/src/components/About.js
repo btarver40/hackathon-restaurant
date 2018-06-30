@@ -26,7 +26,6 @@ const About = () => (
 </div>
 )
 
-
 const MainHeader = styled.div`
 background-image: url(https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e813bc9e93c2b7ede92476a3eddf3606&auto=format&fit=crop&w=800&q=60); 
 background-size: cover;

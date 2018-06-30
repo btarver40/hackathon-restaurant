@@ -44,7 +44,7 @@ background-image: url(https://images.unsplash.com/photo-1511516412963-801b050c92
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat; 
-height: 550px;
+height: 500px;
 text-align: center;
 display: flex;
 overflow: scroll;

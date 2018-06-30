@@ -44,10 +44,10 @@ class Menu extends React.Component {
 
         { items.map( item => (
           <Segment raised key={item.id}>
-            <b>{item.name}</b><br />
-            {item.description}<br />
-            {item.price}<br />
-            {item.quantity}<br />
+            Item: <b>{item.name}</b><br />
+            Description: <i>{item.description}<br /></i>
+            Price: ${item.price}<br />
+            Quantity Left: {item.quantity}<br />
             <Button onClick={() => this.props.dispatch(addToCart(item))}>Add to Cart</Button>
           </Segment>
         ))}
