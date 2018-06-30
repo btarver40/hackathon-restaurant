@@ -1,26 +1,17 @@
 // add an item update edit delete 
+import axios from 'axios'
+
+export const addItem = (item) => {
+  return (dispatch) => {
+    axios.post('/api/items', { item } )
+     .then( res => dispatch({ type: 'ADD_ITEM', app: res.data }) )
+  }
+}
 
 const ADD_ITEM = 'ADD_ITEM'
 const DELETE_ITEM = 'DELETE_ITEM'
 const TOGGLE_ITEM = 'TOGGLE_ITEM'
 const EDIT_ITEM = 'EDIT_ITEM'
-
-
-export const addItem = (item) => {
-  return { type: ADD_ITEM, item}
-}
-
-export const editItem = (id) => {
-  return { type: EDIT_ITEM, id}
-}
-
-export const toggleItem = (name) => {
-  return { type: TOGGLE_ITEM, name}
-}
-
-export const deleteItem = (id) => {
-  return { type: DELETE_ITEM, id}
-}
 
 export default ( state = [], action ) => {
   switch(action.type) {
