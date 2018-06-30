@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeFromCart } from '../actions/cartActions';
+import { removeFromCart, getCart } from '../actions/cartActions';
+import axios from 'axios';
 
 class Cart extends Component {
+
+  componentDidMount() {
+
+    this.props.dispatch(getCart())
+  }
+
   render() {
   
+
     const cartList = this.props.cart.map(( item, index) =>{
       return <div key={index}> 
         <p>{item.name} - {item.price} $ </p>
         <button className="button" 
-                onClick={ () => this.props.removeFromCart(item)} > 
+                onClick={ () => this.props.dispatch(removeFromCart(item))} > 
           Remove 
         </button>
       </div>;
@@ -26,16 +34,8 @@ class Cart extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
-    return {
-        cart: state.cart
-    }
+const mapStateToProps = (state) => {
+  return { cart: state.cart }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        removeFromCart: item => dispatch(removeFromCart(item))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default connect(mapStateToProps)(Cart);

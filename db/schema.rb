@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 20180630161337) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "item_count"
-    t.float "cart_total"
+    t.string "name"
+    t.text "description"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
