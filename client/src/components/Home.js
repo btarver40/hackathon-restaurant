@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 // import { Header } from 'semantic-ui-react';
-import { Container, Divider } from 'semantic-ui-react';
+import { Container, Divider, Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 class Home extends Component {
   render() {
     return (
       <div>
+        <Grid>
+        <Grid.Column mobile={16} tablet={8} computer={16}>
         <MainHeader></MainHeader>
+        </Grid.Column>
+        <Grid.Column mobile={16} tablet={8} computer={16}>
         <Headerr>THE PIE HOLE PIZZERIA</Headerr>
+        </Grid.Column>
         <Container>
           <Divider hidden/>
           <Paragraph>
@@ -17,7 +22,7 @@ class Home extends Component {
           <Divider hidden/>
           <ImageContainer>
           <Preview picture={'https://images.unsplash.com/photo-1507273026339-31b655f3752d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3befe2072b0c78855d51065cc2465f3d&auto=format&fit=crop&w=668&q=80'}/>
-          <Preview picture={'https://images.unsplash.com/photo-1511516412963-801b050c92aa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f23e22ac67f9dd47c1471491abfdda84&auto=format&fit=crop&w=800&q=60'}/>
+          <Preview picture={'https://i.pinimg.com/564x/07/f8/d6/07f8d6f6fe828745c0dd1f8de31a5cce.jpg'}/>
           <Preview picture={'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=86c8c1fd5e9e5b384696472a095c42ac&auto=format&fit=crop&w=800&q=60'}/>
           </ImageContainer>
           <Divider hidden/>
@@ -26,6 +31,7 @@ class Home extends Component {
           </MainParagraph>
           <Divider hidden/>
         </Container>
+        </Grid>
       </div>
     )
   }
@@ -34,49 +40,49 @@ class Home extends Component {
 
 
 const MainHeader = styled.div`
-    background-image: url(https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=efe01df2ebde79714be88d560479c9c7&auto=format&fit=crop&w=800&q=60); 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat; 
-    height: 500px;
-    text-align: center;
-    display: flex;
-    overflow: scroll;
+background-image: url(https://images.unsplash.com/photo-1511516412963-801b050c92aa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f23e22ac67f9dd47c1471491abfdda84&auto=format&fit=crop&w=800&q=60); 
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat; 
+height: 550px;
+text-align: center;
+display: flex;
+overflow: scroll;
 ` 
 
 const Preview = styled.div`
-  background-image: url(${props => props.picture});
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat; 
-  height: 350px;
-  width: 350px;
-  text-align: center;
-  display: flex;
-  overflow: scroll;
-  margin: 0 5px;
-  `
-  const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+background-image: url(${props => props.picture});
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat; 
+height: 350px;
+width: 350px;
+text-align: center;
+display: flex;
+overflow: scroll;
+margin: 0 5px;
+`
+const ImageContainer = styled.div`
+display: flex;
+flex-direction: row;
 
 `
 
 const Headerr = styled.h1`
-  text-align: center;
-  padding-top: 20px;
+text-align: center;
+padding-top: 20px;
 `
 
 const Paragraph = styled.h1`
-  text-align: center;
-  font-family: "Didot 24 A","Didot 24 B"", "Book Antiqua", Palatino, serif;
+text-align: center;
+font-family: "Didot 24 A","Didot 24 B"", "Book Antiqua", Palatino, serif;
 `
 
 const MainParagraph = styled.p`
-  text-align: center;
-  font-family: "Didot 24 A","Didot 24 B"", Palatino, serif;
-  padding-top: 80px;
-  font-size: 25px;
+text-align: center;
+font-family: "Didot 24 A","Didot 24 B"", Palatino, serif;
+padding-top: 80px;
+font-size: 25px;
 `
 
 const Photo = styled.div`
@@ -92,3 +98,5 @@ width: auto;
 overflow: scroll;
 `
 export default Home;
+
+// url(https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=efe01df2ebde79714be88d560479c9c7&auto=format&fit=crop&w=800&q=60);
