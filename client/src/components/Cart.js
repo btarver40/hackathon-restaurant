@@ -29,7 +29,7 @@ class Cart extends Component {
 function mapStateToProps(state, props) {
     return {
         cart: state.cart
-    };
+    }
 }
 
 function mapDispatchToProps(dispatch) {

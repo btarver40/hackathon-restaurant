@@ -1,5 +1,4 @@
 export function addToCart(item) {
-    debugger
  return {
      type: 'ADD',
      item: item
