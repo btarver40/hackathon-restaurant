@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { Button, Container, Segment } from 'semantic-ui-react'
+import { addToCart } from '../actions/cartActions'
 
 
 class Menu extends React.Component {
@@ -18,12 +19,12 @@ class Menu extends React.Component {
     return(
       <Container textAlign='center'>
         { items.map( item => (
-          <Segment raised red key={item.id}>
+          <Segment raised key={item.id}>
             <b>{item.name}</b><br />
             {item.description}<br />
             {item.price}<br />
             {item.quantity}<br />
-            <Button onClick={() => this.props.addToCart(item)}>Add to Cart</Button>
+            <Button onClick={() => this.props.dispatch(addToCart(item))}>Add to Cart</Button>
           </Segment>
         ))}
       </Container>
