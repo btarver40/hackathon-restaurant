@@ -1,8 +1,8 @@
 class Api::ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
-  
+
   def index
-    render json: Item.all
+    render json: Item.all.paginate(page: params[:page], per_page: 5)
   end
 
   def show

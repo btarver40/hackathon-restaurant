@@ -5,10 +5,11 @@ import { Button, Container, Loader, Segment } from 'semantic-ui-react'
 import { addToCart } from '../actions/cartActions'
 
 class Menu extends React.Component {
-  state = { items: [] }
+  state = { items: [], page: 1 }
 
   componentDidMount() {
-    axios.get('/api/items')
+    this.state.page === '' ? 1 : this.state.page
+    axios.get(`/api/items?page=${this.state.page}&per_page=5`)
       .then( res => this.setState({ items: res.data }))
   }
 
@@ -17,6 +18,30 @@ class Menu extends React.Component {
     if (items.length) {
     return(
       <Container textAlign='center'>
+        <Button onClick={() => {
+          if (this.state.page > 1) {
+            this.setState({ page: this.state.page - 1 })
+            axios.get(`/api/items?page=${this.state.page}&per_page=5`)
+              .then(res => this.setState({ items: res.data }))
+          } else {
+            console.log("Bad clicking.")
+          }
+        }}>
+        Prev
+        </Button>
+        {"Page "}<b>{`${this.state.page}   `}</b>
+        <Button onClick={() => {
+          if (this.state.page < 10) {
+            this.setState({ page: this.state.page + 1 })
+            axios.get(`/api/items?page=${this.state.page}&per_page=5`)
+              .then(res => this.setState({ items: res.data }))
+          } else {
+            console.log("Bad clicking.")
+          }
+        }}>
+        Next
+        </Button>
+
         { items.map( item => (
           <Segment raised key={item.id}>
             <b>{item.name}</b><br />
